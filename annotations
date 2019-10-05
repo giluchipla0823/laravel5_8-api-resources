@@ -1,0 +1,8 @@
+# Crear modelo, controlador, migración y factoria
+php artisan make:model [MODEL_NAME] -mcf
+
+# Ejecutar migraciones con seeders
+php artisan migrate --seed
+
+# Actualizar migraciones y seeders
+php artisan migrate:fresh --seed

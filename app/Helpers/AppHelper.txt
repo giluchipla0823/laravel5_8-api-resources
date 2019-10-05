@@ -1,0 +1,89 @@
+<?php
+
+namespace App\Helpers;
+
+
+class AppHelper
+{
+
+    public static function getIncludesFromQueryParams(){
+         return explode(',', $includes = request()->query->get('includes'));
+    }
+
+
+//    public static function getRelationshipsFromQueryParams(Model $resource, string $includes){
+//        $includes = explode(',', $includes);
+//
+////        dump($resource->);
+////        exit();
+//
+////        $relations = array_values(array_intersect($includes, $resource->relationships));
+//
+//        $relations = array_filter($resource->relationships, function($item) use($includes){
+//            return (stripos($item, $includes) === TRUE);
+//        });
+//
+//        dump($relations);
+//        exit();
+//
+//        $data = [];
+//
+//
+////        exit();
+//
+//        $relationsModel = self::getRelationsConfigured($data, $resource->getRelations());
+//
+////        return  array_merge($relations, array_keys($resource->getRelations()));
+//
+////        dump($relationsModel);
+////        exit();
+//
+//        dump($relations);
+//        dump($relationsModel);
+//        exit();
+//
+//        $response = array_merge($relations, $relationsModel);
+//
+////        dump($response);
+////        exit();
+//
+//        return  $response;
+//    }
+//
+//    public static function getRelationsConfigured(&$data,  $relations, $prefix = ''){
+//
+//
+//        foreach ($relations as $idx => $relation){
+//            $instance = $relation;
+//
+//            if($relation instanceof Collection){
+//                $instance = $relation->first();
+//            }
+//
+//            $instanceRelations = $instance->getRelations();
+//
+//            $keyJopende = '';
+//
+//            if($prefix){
+//                $keyJopende .= $prefix . '.';
+//            }
+//
+//            if(count($instanceRelations) === 0){
+//                $data[] = $keyJopende . $idx;
+//            }
+//
+//
+//            foreach ($instanceRelations as $key => $value){
+//                $keyInstance = $idx . '.' . $key;
+//
+//                $data[] =  $keyInstance;
+//
+//                if(count($value->getRelations()) > 0){
+//                    self::getRelationsConfigured($data, $value->getRelations(), $keyInstance);
+//                }
+//            }
+//        }
+//
+//        return $data;
+//    }
+}
